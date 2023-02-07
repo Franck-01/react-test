@@ -1,0 +1,22 @@
+nav{
+    background-image: url("https://i.pinimg.com/originals/94/bc/07/94bc076520233b2021e4bf5e4fbe8bef.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50px;
+    display: block;
+
+    color: white;
+}
+nav li{
+    border: 6px double rgb(255, 255, 255);
+    box-shadow: 0 0 25px rgb(255, 255, 255);
+    font-size: 24px;
+    justify-self: stretch;
+    text-align: center;
+    margin-right: 7%;
+    margin-left: 7%;
+    padding: 2%;
+    border-radius: 20px;
+    display: block;
+}

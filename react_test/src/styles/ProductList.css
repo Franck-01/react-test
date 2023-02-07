@@ -1,0 +1,15 @@
+img{
+    height: 50%;
+    width: 30%;
+}
+.itemgroup{
+    color: white;
+    width: 80%;
+    height: auto;
+    margin: 30px;
+    font-size: 12px;
+    background: rgb(255,0,0);
+    background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(122,0,0,1) 27%, rgba(0,0,0,1) 100%);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}

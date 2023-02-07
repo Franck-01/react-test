@@ -1,0 +1,9 @@
+html , body , #root{
+    background-color: black; 
+    text-align: center;
+    font-weight: 600;
+    color:white;
+    width: 100%;
+    max-width: 100%;
+    margin: auto auto;
+}
