@@ -17,31 +17,31 @@ const Reducer = (state, action) => {
                 ...state,
                 cart: [...state.cart, action.payload.data],
             };
-        case "UPDATE_CART_QUANTITY":
+        case "UPDATE_CART_COUNTER":
             return {
                 ...state,
                 cart: state.cart.filter((item) => {
                     return item.id === action.payload
-                    ? (item.quantity += 0.5)
-                    : item.quantity;
+                    ? (item.counter += 0.5)
+                    : item.counter;
                 }),
             };
-        case "INCREASE_QUANTITY":
+        case "INCREASE_COUNTER":
             return {
                 ...state,
                 cart: state.cart.filter((item) => {
                     return item.id === action.payload
-                    ? (item.quantity += 0.5)
-                    : item.quantity;
+                    ? (item.counter += 0.5)
+                    : item.counter;
                 }),
             };
-        case "DECEASE_QUANTITY":
+        case "DECEASE_COUNTER":
             return {
                 ...state,
                 cart: state.cart.filter((item) => {
                     return item.id === action.payload
-                    ? (item.quantity -= 0.5)
-                    : item.quantity;
+                    ? (item.counter -= 0.5)
+                    : item.counter;
                 }),
             };
         case "REMOVE_ITEM":
@@ -70,23 +70,23 @@ export const GlobalContextProvider = ({children}) => {
     }
     const UpdateCart = (id) => {
         dispatch({
-            type: "UPDATE_CART_QUANTITY",
+            type: "UPDATE_CART_COUNTER",
             payload: id,
         })
     }
-    const IncreaseQuantity = (id) => {
+    const IncreaseCounter = (id) => {
         dispatch({
-            type: "INCREASE_QUANTITY",
+            type: "INCREASE_COUNTER",
             payload: id,
         })
     }
-    const decreaseQuantity = (id) => {
+    const DecreaseCounter = (id) => {
         dispatch({
-            type: "DECEASE_QUANTITY",
+            type: "DECEASE_COUNTER",
             payload: id,
         });
     }
-    const removeItem = (id) => {
+    const RemoveX = (id) => {
         dispatch({
             type: "REMOVE_ITEM",
             payload: id,
@@ -99,10 +99,14 @@ export const GlobalContextProvider = ({children}) => {
                 LoginStatus: state.IsLoggIn,
                 cart: state.cart,
                 AddToCart,
-                
+                UpdateCart,
+                IncreaseCounter,
+                DecreaseCounter,
+                RemoveX,
             }}
         >
-
+            {children}
         </GlobalContext.Provider>
     )
 }
+export default GlobalContextProvider
