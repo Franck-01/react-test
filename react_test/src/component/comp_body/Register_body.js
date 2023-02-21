@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -78,47 +77,70 @@ const Register_body = () => {
         })
     }
     return (
-        <div>
-            <form onSubmit={submit_Handler}>
-                <h2>Register</h2>
-                <div>
-                    <label htmlFor="name">Name</label>
+        <div className="w-full flex justify-center items-center">
+            <form 
+                className="bg-white p-4 shadow-md border rounded my-5 py-3"
+                onSubmit={submit_Handler}
+            >
+                <h2 className="text-center w-full p-3 text-gray-500 text-xl font-bold">
+                    Register
+                </h2>
+                <div className="mb-2">
+                    <label className="text-gray-500 mb-2 font-bold" htmlFor="name">
+                        Name
+                    </label>
                     <input 
                         type="text"
                         placeholder="Name"
                         id="name"
                         name="name" 
-                        onChange={onChange_Handler} />
+                        onChange={onChange_Handler} 
+                        className="w-full py-2 px-3 text-gray-500 shadow focus:outline-none focus:shadow-md  border border-gray-500 rounded"
+                        />
                 </div>
-                <div>
-                    <label htmlFor="email">Email</label>
+                <div className="mb-2">
+                    <label className="text-gray-500 mb-2 font-bold" htmlFor="email">
+                        Email
+                    </label>
                     <input 
                         type="text"
                         placeholder="Email"
                         id="email"
                         name="email" 
-                        onChange={onChange_Handler} />
+                        onChange={onChange_Handler} 
+                        className="w-full py-2 px-3 text-gray-500 shadow focus:outline-none focus:shadow-md  border border-gray-500 rounded"
+                        />
                 </div>
-                <div>
-                    <label htmlFor="password">Password</label>
+                <div className="mb-2">
+                    <label className="text-gray-500 mb-2 font-bold" htmlFor="password">
+                        Password
+                    </label>
                     <input 
                         type="password"
                         placeholder="Password"
                         id="password"
                         name="password"  
-                        onChange={onChange_Handler} />
+                        onChange={onChange_Handler} 
+                        className="w-full py-2 px-3 text-gray-500 shadow focus:outline-none focus:shadow-md  border border-gray-500 rounded"
+                        />
                 </div>
-                <div>
-                    <label htmlFor="confirm_password">Confirm Password</label>
+                <div className="mb-2">
+                    <label className="text-gray-500 mb-2 font-bold" htmlFor="confirm_password">
+                        Confirm Password
+                    </label>
                     <input 
                         type="password"
                         placeholder="Confirm Password"
                         id="confirm_password"
                         name="confirm_password"  
-                        onChange={onChange_Handler} />
+                        onChange={onChange_Handler} 
+                        className="w-full py-2 px-3 text-gray-500 shadow focus:outline-none focus:shadow-md  border border-gray-500 rounded"
+                        />
                 </div>
-                <div>
-                    <button>Register</button>
+                <div className="flex flex-col justify-between items-center my-3 mb-5">
+                    <button className="text-white font-bold bg-blue-500 py-2 px-3 border rounder hover:bg-blue-700">
+                        Register
+                    </button>
                 </div>
             </form>
             <ToastContainer/>

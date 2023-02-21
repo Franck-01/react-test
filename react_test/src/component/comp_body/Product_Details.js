@@ -1,7 +1,7 @@
-import "../../styles/ProductList.css"
 import React, { useEffect, useContext, useState } from "react"
 import { useParams } from "react-router-dom";
 import {GlobalContext} from "../context/GlobalContext.js"
+import axios from "axios";
 
 const ProductDetails_body = () => {
     const params = useParams()
@@ -42,22 +42,30 @@ const ProductDetails_body = () => {
         AddToCart(newProd)
     }
     return(
-        <div className="itemgroup">
-            <div>
-                <h2>Nombre: {product.name}</h2>
-                <h3>Modelo: {product.model}</h3>
-                <p>Faccion: {product.faction}</p>
-                <p>Descripcion: {product.description}</p>
-                <img src={product.url} alt={product.name} />
-                <h3>Price: ${product.price}</h3>
-                <h4>Stock: {product.stock}</h4>
-            </div>
-            <div>
-                <button onClick={AddToCart_Handler}>
-                    Agregar al carrito
-                </button>
-            </div>
-        </div> 
+        <div className="w-full h-100 mt-5 flex justify-center ">
+            <div className="w-[80%] mt-[90px] grid gap-4 grid-cols-2">
+                <div>
+                    <img src={product.url} alt={product.name} className="w-full" />
+                </div>
+                <div className="grid gap-4">
+                    <div>
+                        <h2 className="hover:text-orange-400">Nombre: {product.name}</h2>
+                        <h3 className="hover:text-orange-400">Modelo: {product.model}</h3>
+                        <p className="hover:text-orange-400">Faccion: {product.faction}</p>
+                        <p className="hover:text-orange-400">Descripcion: {product.description}</p>
+                        <h3 className="my-2">Price: ${product.price}</h3>
+                        <h4 className="my-2">Stock: {product.stock}</h4>
+                    </div>
+                    <div>
+                        <button 
+                            className="w-full self-end block py-2 px-5 bg-orange-400 text-white rounded hover:bg-transparent hover:text-orange-400"
+                            onClick={AddToCart_Handler}>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div> 
+        </div>
     )
 }
 

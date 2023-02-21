@@ -9,8 +9,8 @@ const Login_body = () => {
         password: "",
     })
     const navigate = useNavigate()
-    const onChange_Handler = (e) => {
-        const {name, value} = e.target
+    const onChange_Handler = (prev) => {
+        const {name, value} = prev.target
         set_Inputs({
             ...prev,
             [name]: value
@@ -63,7 +63,7 @@ const Login_body = () => {
                     progress: undefined,
                     theme: "light",
                 });
-                navigate("/");
+                navigate("/register");
             }
         })
         .catch((err) => {
@@ -71,34 +71,49 @@ const Login_body = () => {
         })
     }
     return(
-        <div>
-            <from onSubmit={submit_Handler}>
-                <h2>Login</h2>
-                <div>
-                    <label htmlForm="username">Username</label>
+        <div className="w-full flex justify-center items-center">
+            <form
+                className="bg-white p-4 shadow-md border rounded my-5 py-3"
+                onSubmit={submit_Handler}
+            >
+                <h2 className="text-center w-full p-3 text-gray-500 text-xl font-bold">
+                    Login
+                </h2>
+                <div className="mb-2">
+                    <label className="text-gray-500 mb-2 font-bold" htmlForm="username">
+                        Username
+                    </label>
                     <input 
                         type="text"
                         placeholder="Username"
                         id="username"
                         name="username" 
                         value={inputs.username} 
-                        onChange={onChange_Handler}/>
+                        onChange={onChange_Handler}
+                        className="w-full py-2 px-3 text-gray-500 shadow focus:outline-none focus:shadow-md  border border-gray-500 rounded"
+                        />
                 </div>
-                <div>
-                    <label htmlForm="password">Password</label>
+                <div className="mb-2">
+                    <label className="text-gray-500 mb-2 font-bold" htmlForm="password">
+                        Password
+                    </label>
                     <input 
                         type="text"
                         placeholder="Password"
                         id="password"
                         name="password"
                         value={inputs.password}
-                        onChange={onChange_Handler}/>
+                        onChange={onChange_Handler}
+                        className="w-full py-2 px-3 text-gray-500 shadow focus:outline-none focus:shadow-md  border border-gray-500 rounded"
+                        />
                 </div>
-                <div>
-                    <button>Login</button>
-                    <a href="#">Forgot Password?</a>
+                <div className="flex justify-between items-center my-3 mb-5">
+                    <button className="text-white font-bold bg-blue-500 py-2 px-3 border rounder hover:bg-blue-700">
+                        Login
+                    </button>
+                    <a href="/" className=" text-blue-500">Forgot Password?</a>
                 </div>
-            </from>
+            </form>
             <ToastContainer/>
         </div>
     )
