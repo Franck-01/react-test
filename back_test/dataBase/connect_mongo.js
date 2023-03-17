@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
 dotenv.config();
-mongoose.set("strictQuery", false)
+mongoose.Types.ObjectId.isValid('your id here')
 const URL = "mongodb+srv://Franck01:comandante0-1@backendcluster5701.afwv7.mongodb.net/proyect_test_react?retryWrites=true&w=majority"
 
 const connectDB = async () => {

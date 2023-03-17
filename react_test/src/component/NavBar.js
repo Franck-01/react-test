@@ -70,56 +70,6 @@ const NavBar = () => {
                     <AiOutlineMenu onClick={toggle_Nav} className="text-white text-4xl px-2 "/>
                 )}
             </div>
-            <div className={nav
-            ? `md:hidden fixed top-0 left-0 h-[100%] w-60 bg-[#000300] ease-in-out duration-300`
-            : `hidden `}>
-                <h1 className="text-white text-left font-bold md:text-4xl sm:3xl text-xl p-3">
-                    E-COMMERCE
-                </h1>
-                <ul className=" flex flex-col text-left p-3">
-                    <Link to="/">
-                        {" "}
-                        <li className="text-white font-bold p-2 hover:bg-[#2C2A2A] cursor-pointer">
-                            Home
-                        </li>
-                    </Link>
-                    <Link to="cart">
-                        <li className="text-white font-bold p-2 hover:bg-[#2C2A2A] cursor-pointer">
-                            Cart
-                        </li>
-                    </Link>
-                    {LoginStatus ? (
-                        <>
-                            <Link to="addnewproduct">
-                                <li className="text-white font-bold p-2 hover:bg-[#2C2A2A] cursor-pointer">
-                                    Add New Product
-                                </li>
-                            </Link>
-                            <Link to="/">
-                                <li
-                                onClick={logout_Handler}
-                                className="text-white font-bold p-2 hover:bg-[#2C2A2A] cursor-pointer"
-                                >
-                                    Logout
-                                </li>
-                            </Link>
-                        </>
-                    ):(
-                        <>
-                            <Link to="/login">
-                                <li className="text-white font-bold p-2 hover:bg-[#2C2A2A] cursor-pointer">
-                                    Login
-                                </li>
-                            </Link>
-                            <Link to="register">
-                                <li className="text-white font-bold p-2 hover:bg-[#2C2A2A] cursor-pointer">
-                                    Register
-                                </li>
-                            </Link>
-                        </>
-                    )}
-                </ul>
-            </div>
         </div>
     )
 }

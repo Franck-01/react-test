@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const productCollection = "product-test"
+const productCollection = "productTest"
 const productSchema = new Schema({
     name: { type:String },
     model: { type:String },

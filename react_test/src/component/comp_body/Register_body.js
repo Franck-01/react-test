@@ -7,17 +7,17 @@ const Register_body = () => {
     const navigate = useNavigate();
 
     const [inputs, set_Inputs] = useState({
-        name: "",
         email: "",
+        username:"",
         password: "",
         confirm_password: ""
     })
     const onChange_Handler = (e) => {
-        const {name, value} = e.target
+        const {username, value} = e.target
         set_Inputs((prev) => {
             return{
                 ...prev,
-                [name]: value
+                [username]: value
             }
         })
     }
@@ -86,19 +86,6 @@ const Register_body = () => {
                     Register
                 </h2>
                 <div className="mb-2">
-                    <label className="text-gray-500 mb-2 font-bold" htmlFor="name">
-                        Name
-                    </label>
-                    <input 
-                        type="text"
-                        placeholder="Name"
-                        id="name"
-                        name="name" 
-                        onChange={onChange_Handler} 
-                        className="w-full py-2 px-3 text-gray-500 shadow focus:outline-none focus:shadow-md  border border-gray-500 rounded"
-                        />
-                </div>
-                <div className="mb-2">
                     <label className="text-gray-500 mb-2 font-bold" htmlFor="email">
                         Email
                     </label>
@@ -107,6 +94,19 @@ const Register_body = () => {
                         placeholder="Email"
                         id="email"
                         name="email" 
+                        onChange={onChange_Handler} 
+                        className="w-full py-2 px-3 text-gray-500 shadow focus:outline-none focus:shadow-md  border border-gray-500 rounded"
+                        />
+                </div>
+                <div className="mb-2">
+                    <label className="text-gray-500 mb-2 font-bold" htmlFor="username">
+                        Username
+                    </label>
+                    <input 
+                        type="text"
+                        placeholder="Username"
+                        id="username"
+                        name="username" 
                         onChange={onChange_Handler} 
                         className="w-full py-2 px-3 text-gray-500 shadow focus:outline-none focus:shadow-md  border border-gray-500 rounded"
                         />

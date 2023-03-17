@@ -63,13 +63,12 @@ router.post("/login",[
     }
 )
 router.post("/register",[
-    check("name", "Enter Name").not().isEmpty(),
     check("username", "Enter Username").not().isEmpty(),
     check("email", "Enter Email").not().isEmpty(),
     check("password", "Enter Password").not().isEmpty(),
     check("confirm_pass", "Confirm Password").not().isEmpty(),
     ], async (req, res, next) => {
-        const {name, username, email, password, confirm_pass} = req.body
+        const {username, email, password, confirm_pass} = req.body
         const error = validationResult(req)
         if (!error.isEmpty()){
             res.json({ error: error.array(), error_type: 0, created: false });
@@ -91,7 +90,6 @@ router.post("/register",[
         }
 
         const user = new User({
-            name,
             username,
             email,
             password
